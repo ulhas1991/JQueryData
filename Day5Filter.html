@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>HTML Table Header</title>
+
+<script src="jquery-3.1.1.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        
+        //To give color to p1 ONLY
+        $('.data1 .p1').css('background-color',' blue');
+
+        //Alternate is to use filter
+        $('.data1').filter('.data2').css('background-color','yellow');
+        $('.data1').css('background-color','green');
+        $('.data2').css('background-color',' grey');
+        $('.data3').css('background-color','yellow');
+    });
+
+</script>
+</head>
+
+<body>
+    
+    <div class="data1 data2">
+        <p>IN DIV 1</p>
+    </div>
+
+    <div class="data1">
+        <p class="p1">Hello</p>
+        <p class="p2">Hii</p>
+    </div>
+    
+    <div class="data2">
+        <p>In data2</p>
+    </div>
+
+    <div class="data3">
+        <p>In data3</p>
+    </div>
+
+</body>
+</html>

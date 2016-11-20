@@ -1,0 +1,118 @@
+JQuery  is lightweight javascript library that is used by million of users.
+
+Document.ready function is called even before the css and called just after DOM is fully loaded.
+
+$(document).ready(function(){
+		$("#button1").click(function(){
+			alert("clicked");
+		})
+	});
+
+Document.load function will be fired after loading all the css and other things.
+
+$(document).load(function(){
+		$("#button1").click(function(){
+			alert("clicked");
+		})
+	});
+
+Placement of script is important in jQuery.
+
+CDN= Content Delivery Network which holds all the css images etc required in the webPage.
+If we want to load from another server then we use CDN.
+window.jQuery|| document.write("<script src= '//sourceof script'><\/script>")
+
+jQuery SELECTORs are used to select various elements from DOM(Document Object Model) tree by:
+ElementName
+ElementID
+ElementClass
+ElementAttribute
+
+
+document.getElementById is faster than $(#id) becaus it will give the functionality provided by jQuery.
+
+If element is a desendent then place space between them for ex. $('table (space NO comma) tr').each(function(){alert($(this).html()});
+to print the every row in a new dialouge box in alertbox.
+
+For Odd and Even purposes use $('tr : even').css('background-color','blue');
+Similarly we can use it with css. Forex: $(.class,.big).css('background-color','blue');
+
+Filter is used to filter the elements. Forex: $('li').filter(':even').css('background-color','yellow');
+
+AttributeSelector is used to select the elements based on the attribute values.(Should be enclosed in Square-Bracktes Only)
+Forex: $('[title]') To select all elements who has title attribute.
+	   $('div[title]') To select all div elements who has title attribute
+	   We can also specify values such as  $('div[title="Class1"]') Will select all the records who as Class1 as title in Div.
+	   Also $('div[title][style]') will select all attributes who has title as well as style.
+	   To specify OR condition specify comma(,) between $('div[title],[style]')
+	   
+'\' is a escape character so it doesnt check the next quotes and ignore them.
+
+$("input") is used to select the input records only not the drop-down menu items and textarea whereas $(":input") is used to select all the input records.
+
+To convert JSON object to a string use JSON.stringify() method while if we want  to convert string object to JSON we need JSON.parse method.
+
+('div').wrap("<div class='divContainer'></div>") is used to wrap all the elements of the existing div tag into divContainer. After execution of this instruction
+all the elements will be have a seperate  'divContainer' named class. So if 3 div elements are there then 3 class named as divContainer will be present
+
+(div).unrap(); Doesnt take any arguments and unwraps all the nested elements.ie. it removese the parent of set of matched elements.
+
+(div).wrapAll("<div class='divContainer'></div>") is same as wrap but only difference is it will wrap all the elemts in single divContainer class unline wrap method
+which creates 3 divContainer named classes.
+
+wrapInner will wrap divContainer class inside of each div element.
+
+If ur inserting or using appendTo or PrependTo then you should specify the HTML tag as well so as to work.
+
+insert and insertBefore has the same behaviour as append and appendTo.
+
+Similarly after and insertAfter will work.
+
+.each() function is used t iterate over the jQuery object whereas $.each() is used to iterate over JAVASCRIPT array/object.
+instead of result+=$(this).text(); we can use 
+result.push($(this).text());
+.map() function is similar to each function but we dont need to specify object inside instead  we use get method at the end
+
+var a=$('li).map(function(){
+	return $(this).text();
+}).get().join('|');
+so a will contain all the text of li elements seperated by '|'.
+each method can be TERMINATED by using return false BUT MAP method CANNOT be terminated even if we return false.
+each method is IMMUTABLE we cannot change values of original dataset whereas Map methodis mutable.
+
+jQuery change() event is used to handle the change event of textboxes, select , text-area.
+
+mouseover and mouseout are same whereas mouseenter and mouse leave are alternatie for it as well as  hover is there.
+
+javascript uses event.which to deteremine which mouse button is clicked in case of IE8 or later the codes are:
+switch(event.which){ case 1: left clicked;break; case 2:middle clicked;break; case 3:right clicked;brea;}
+in case of IE7 or earlier versions:
+switch(event.button)1:left 2:right 4:middle
+in jQuery it uses button.which and normalizes even the beowser is IE7 or later so single code is used to work againts multiple browsers.
+
+$('btn1').bind('click mouseover mousedown',function(event)) is used to bind the btn1 to 3 events so we can write nxt line as follows:
+if(event.type=='click'){alert("btn clicked"};
+else if(event.type=='mouseover'){alert("mouse over event");}
+NOTE:THERE SHOULD BE ONLY 1 SINGLE QUOTE AND NO COMMAS TO SEPERATE EVENTS
+in jQuery 1.7 or higher bind and unbind are replaced by on() and off().
+
+EVENT DELEGATION was earlier used as delegate and now replaced by on(). It is similiar to delegate function event delegate syntax is as follows:
+$('ul').on('click','li',function(){
+alert(hii});
+this functionwill be triggered if any item in ul list is clicked so only one handler is present for all li items thats event delegation.
+And to undelegeate use off function.
+Live and die function ae similar to on and off function and it is REMOVED from jquery 1.7 and the main difference between on and live is that 
+live function will modify the DOM element whereas the on function will modify the parent element.
+
+To detect whether any evennt is attached to element we have to use $._data() function forex:
+var jQueryElement=$('btn1');
+var domElement=jQueryElement.get(0);
+var events=$._data(domElement,'events');
+if(events ==undefined){alert(no events attached);}
+
+Load function is used to load the data from server it conisit of 3 parameters {url,data,response}
+alternative for load is get the difference between the 2 is load is used to load only html data whereas get is used to load html as well as xml, json etc data
+
+we can specify multiple evennts using ON such as .on({click:function(){  }, onMouseOver: function(){ },etc)
+
+Focus and blur event is used to take the focus as well as to get the blur event from there.

@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script type="text/javascript">
+          $(document).ready(function(){
+        // Single Element
+            var employee={
+                "firstname":"ulhas",
+                "lastname" :"shelke",
+                "pincode"  :411058,
+                "Country"  :"India"
+            };
+            $("#display").html(employee.firstname);
+
+        //ARRAY
+        var employee1=[
+        {
+                "firstname":"ulhas",
+                "lastname" :"shelke",
+                "pincode"  :411058,
+                "Country"  :"India"
+            
+        },
+        {
+                 "firstname":"aa",
+                "lastname" :"bb",
+                "pincode"  :411058,
+                "Country"  :"India"
+        }];
+         $("#display").html("USING ARRAY <br> "+employee1[0].firstname+"<br>"+employee1[1].firstname);
+       
+        
+        //ALTERNATIVE TO ARRAY
+          var employee2={
+       "ulhas":
+        {
+                "firstname":"ulhasNew",
+                "lastname" :"shelke",
+                "pincode"  :411058,
+                "Country"  :"India"
+            
+        },
+        "aa":
+        {
+                 "firstname":"aaNew",
+                "lastname" :"bb",
+                "pincode"  :411058,
+                "Country"  :"India"
+          }};
+            $("#display").html("USING ARRAY <br> "+employee2.ulhas.firstname+"<br>"+employee2.aa.firstname);
+          });
+        </script>
+    </head>
+
+    <body>
+        <div id="display"></div>
+    </body>
+</html>

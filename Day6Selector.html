@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#Send").click(function(){
+                  var result=  $("input[type='radio']:checked");
+                        $("#Data1").html(result.val()+"is selected");
+                    
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <input type="radio" name="gender" value="Male"  >Male<br>
+        <input type="radio" name="gender" value="Female">Female<br>
+        <input type="submit" value="submit" id="Send">
+        <div id="Data1">
+        </div>
+
+    </body>
+</html>

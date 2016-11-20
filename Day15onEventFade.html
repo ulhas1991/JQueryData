@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#btn1').on('click',function(){
+                    var data="<li>NewItem</li>";
+                    $('ul').append(data);
+                });
+                //if u want only even item to remove then use li:even instead of only li
+                $('ul').on('click','li', function(){
+                    $(this).fadeOut(500);
+                });
+                $('#btn2').on('click',function(){
+                $('ul').off('click','li');
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input id="btn1" type="button" value="AddNewItem">
+          <input id="btn2" type="button" value="UnDelegate">
+        <ul>
+            <li>Item1</li>
+            <li> Item2</li>
+            <li>Item3</li>
+        </ul>
+    </body>
+</html>

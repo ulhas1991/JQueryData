@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script>
+            $(document).ready(function(){
+             /*  $("img").mouseover(function(){
+                   $("#"+getData(this)).fadeIn(500);
+               }).mouseout(function(){
+                   $("#"+getData(this)).fadeOut(500);
+               });*/
+
+               /*Alternative
+                $("img").mouseenter(function(){
+                   $("#"+getData(this)).fadeIn(500);
+               }).mouseleave(function(){
+                   $("#"+getData(this)).fadeOut(500);
+               });*/
+               //Anotherway using Hover
+
+                $("img").hover(function(){
+                   $("#"+getData(this)).fadeIn(500);
+               },function(){
+                   $("#"+getData(this)).fadeOut(500);
+               });
+               function getData(data){
+                   var data=$(data).attr('id');
+                   return data.replace('img','para');
+               }
+            });
+
+        </script>
+    </head>
+    <body>
+         FirstName:<input type="text" id="firstName" class="inputData">
+         <img src="Help.png" id="imgfirstname" width="20px" height="15px">
+         <span id=parafirstname style="display:none">Enter Your FirstName</span>
+         <br/><br/>
+
+        LastName:<input type="text" id="lastName" class="inputData">
+        <img src="Help.png" id="imglastname" width="20px" height="15px">
+         <span id=paralastname style="display:none">Enter Your LastName</span>
+         <br/><br/>
+
+        <input type="radio" value="Red" class="inputData">Red
+        <input type="radio" value="Blue" class="inputData">Blue
+        <input type="radio" value="Green" class="inputData">Green
+        <input type="radio" value="Yellow" class="inputData">Yellow
+        <img src="Help.png" id="imgradio"width="20px" height="15px">
+         <span id=pararadio style="display:none">Select 1 radio button</span>
+        <br/><br/><br>
+
+        <input type="checkbox" value="Pune" class="inputData">Pune
+        <input type="checkbox" value="Mumbai" class="inputData">Mumbai
+        <input type="checkbox" value="Nashik" class="inputData">Nashik
+        <input type="checkbox" value="Satara" class="inputData">Satara
+        <img src="Help.png" id="imgcheckbox" width="20px" height="15px">
+         <span id=paracheckbox style="display:none">Select atelast 1 checkbox</span>
+        <br/><br/><br>
+        <select id="selectData" class="inputData">
+            <option value="Java">Java</option>
+            <option value="HTML">HTML</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="AngularJS">AngularJS</option>
+        </select>
+        <img src="Help.png" id="imglanguage" width="20px" height="15px">
+         <span id="paralanguage" style="display:none">Select your Language</span>
+        <br><br>
+        <input type="button" id="btn1" value="SubmitData">
+        <div id="display"></div>
+
+    </body>
+
+</html>

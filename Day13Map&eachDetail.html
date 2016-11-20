@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            window.jquery || document.write("<script src='jquery-3.1.1.js'><\/script>");
+        </script>
+        <script>
+             $(function(){
+            var data=[1,2,3,4,5,6,7];
+
+            //EACH FUNCTION IS IMMUTABLE WE CAN TERMINATE EACH BY RETURN FALSE
+            function dataA(index,element){
+                return element*5;
+            }
+
+            //FOR MAP FIRST IS ELEMENT THEN INDEX WE CANNOT TERMINATE MAP FUNCTION
+            function dataB(element,index){
+                return element*5;
+            }
+            var result3='';
+            result3= $(data).map(function(element,index){
+                if(element==3){
+                    return false;
+                }else{
+                return element;
+                }
+            });
+             var result= $.each(data,dataA);
+             var result1=$.map(data,dataB);
+             document.write("<br>");
+             document.write(result);
+             document.write("<br>");
+             document.write(result1);
+             document.write("<br>");
+             document.write(result3);
+        });
+        </script>
+    </head>
+    <body>
+        <div id='data1'></div>
+        <div id='data2'></div>
+    </body>
+</html>

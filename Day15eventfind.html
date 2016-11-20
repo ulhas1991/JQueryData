@@ -1,0 +1,27 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="jquery-3.1.1.js"></script>
+<script>
+$(document).ready(function() {
+	$('#btn1').click(function() {
+		alert("Event Attached");
+	});
+	var jQueryObject = $('#btn1');
+	var domObject = jQueryObject.get(0);
+	var event = $._data(domObject, 'events');
+	if (event != undefined) {
+		alert("AlreadyExists");
+	}
+	else {
+    	alert("No Event Listed");
+    }
+});
+</script>
+
+<title>Insert title here</title>
+</head>
+<body>
+	<button id="btn1" value="ClickMe">ClickMe</button>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <style>
+            .addColor{
+               font-size: 250%;
+                color:red;
+            }
+            .additalic{
+                font-style: italic;
+            }
+        </style>
+
+        <script src="jquery-3.1.1.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#btn1').click(function(){
+                    $("p").addClass('addColor');
+                });
+                $('#btn2').click(function(){
+                    $("p").removeClass('addColor');
+                });
+
+                $('#btn3').click(function(){
+                    $("p").addClass('additalic');
+                });
+                $('#btn4').click(function(){
+                    $("p").removeClass('additalic');
+                });
+
+                $('#btn5').click(function(){
+                    $("p").addClass('addColor additalic');
+                });
+                $('#btn6').click(function(){
+                    $("p").removeClass();
+                });
+
+            });
+        </script>
+
+    </head>
+
+    <body>
+        <p>Hello Ulhas</p>
+        <table>
+            <tr>
+                <td><input id="btn1" type="button" style="width:200px" value="AddColor"></td>
+                <td><input id="btn2" type="button" style="width:200px" value="RemoveColor"></td>
+            </tr>
+            <tr>
+                <td><input id="btn3" type="button" style="width:200px" value="AddItalic"></td>
+                <td><input id="btn4" type="button" style="width:200px" value="RemoveItalic"></td>
+            </tr>
+            <tr>
+                <td><input id="btn5" type="button" style="width:200px" value="AddAll"></td>
+                <td><input id="btn6" type="button" style="width:200px" value="RemoveAll"></td>
+            </tr>
+
+
+    </body>
+
+</html>

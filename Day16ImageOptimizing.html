@@ -1,0 +1,98 @@
+
+<html>
+<head>
+		<style>
+				.imgstyle{
+				height:100px;
+				width:100px;
+				border:1px solid grey;
+			}
+		</style>
+		
+	   <script src="jquery-3.1.1.js"></script>
+	   <script>
+		   $(document).ready(function(){
+			   $("#galleryImages").on({
+				   mouseover:function(){
+					   $(this).css({
+					   'cursor':'pointer',
+					   	'border-Color':'blue'
+				    });
+				   },
+				   mouseout:function(){
+					   $(this).css({
+					   'cursor':'default',
+					   	'border-Color':'grey'
+				    });
+				   },
+				   click:function(){
+                      var effect=$("#selectEffect").val();
+                      var time=$("#selectTime").val()*1000;
+                      var mainimgData=$("#mainImage");
+                    if(effect=="fade"){
+					      var mainImage1=$(this).attr('src');
+				    	  $(mainimgData).fadeOut(time,function(){
+						      $(this).attr('src',mainImage1);
+					    }).fadeIn(time);  
+                      }
+                      else{
+                          var mainImage1=$(this).attr('src');
+				    	  $(mainimgData).slideUp(time,function(){
+						      $(this).attr('src',mainImage1);
+					    }).slideDown(time);  
+                      }
+				   }
+			   },"img");
+               var mainImage1=$("#mainImage");
+               var height=parseInt($("#mainImage").attr('height'));
+               var width=parseInt($("#mainImage").attr('width'));
+              
+               $("#btnEnlarge").click(function(){
+                   height+=100;
+                   width+=100;
+                   mainImage1.animate({
+                       'height':height,
+                       'width':width
+                   });
+                });
+
+                $("#btnShrink").click(function(){
+                   height-=100;
+                   width-=100;
+                   mainImage1.animate({
+                       'height':height,
+                       'width':width
+                   });
+                });
+		   });
+           
+		</script>
+		
+<title>Insert title here</title>
+</head>
+<body>
+   Select Effect: <select id="selectEffect">
+        <option value="fade">Fade</option>
+        <option value="slide">Slide</option>
+    </select>
+    Time In Seconds: <select id="selectTime">
+        <option value="0.5">0.5</option>
+        <option value="1">1</option>
+        <option value="1.5">1.5</option>
+        <option value="2">2</option>
+        </select>
+    <button id="btnEnlarge">Enlarge</button> <button id="btnShrink">Shrink</button>
+    <br><br>
+    
+	<img id="mainImage" alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Hydrangeas.jpg"
+		height="500" width="520" style= "border:3px solid red">	
+<div id="galleryImages">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Hydrangeas.jpg" class="imgstyle">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Koala.jpg"class="imgstyle">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Lighthouse.jpg"class="imgstyle">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Jellyfish.jpg"class="imgstyle">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Penguins.jpg"class="imgstyle">
+</div>
+
+</body>
+</html>

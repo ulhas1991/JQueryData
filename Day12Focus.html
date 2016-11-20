@@ -1,0 +1,35 @@
+<html>
+    
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <style>
+            .myFormat{
+                background-color:red;
+                color:white;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                    $('input[type="text"]').each(function(){
+                        $(this).focus(function(){
+                            $(this).addClass('myFormat');
+                        });
+                         $(this).blur(function(){
+                            $(this).removeClass('myFormat');
+                        });
+                    });
+            });
+
+        </script>
+    
+    <body>
+        FirstName:<input type="text" id="textbox1"/><br><br><br>
+        LastName:<input type="text" id="textbox2"/><br><br><br>
+       &nbsp;&nbsp;&nbsp; <select >
+            <option value="usa">USA</option>
+            <option value="India">India</option>
+        </select>
+    </body>
+
+</html>

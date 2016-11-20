@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <script src="jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#btn1').on('click',{
+                firstname:'jagga',
+                lastname:'jasus'
+            },getData );
+            function getData(event){
+                alert(event.data.firstname+" -"+event.data.lastname);
+            }
+        });    
+    </script>
+</head> 
+    <body>
+    <input id="btn1" type="button" value="ClickMe">
+    <div id="display"></div>
+    </body>
+</html>

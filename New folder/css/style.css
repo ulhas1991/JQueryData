@@ -1,0 +1,23 @@
+
+.questions li { 
+list-style: upper-alpha;
+color: red;
+font-style:italic; 
+}
+h1{
+	
+    background-color: green;
+    text-align: center;
+	color: red;
+	font-style:italic;
+    font-size: 40px;
+} 
+body {
+    background-color: lightblue;
+}
+
+label { 
+margin-left: 0.5em; 
+cursor: pointer; 
+} 
+

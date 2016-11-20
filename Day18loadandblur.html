@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+ <script src='jquery-3.1.1.js'></script>
+ <script src='dataAjax.html'></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var textData=$("input[type='text']");
+		textData.focus(function(){
+			var helpDiv='Your'+$(this).attr('id');
+			$("#"+helpDiv).load('dataAjax.html #' + helpDiv);
+		});
+
+		textData.blur(function(){
+			var helpDiv='Your'+$(this).attr('id');
+			$("#"+helpDiv).html('');
+		});	
+	});
+
+
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>FirstName:<input id="FirstName" type="text"></td>
+			<td><div id="YourFirstName"></div></td>
+		</tr>
+		<tr>
+			<td>LastName:<input id="LastName" type="text"></td>
+			<td><div id="YourLastName"></div></td>
+		</tr>
+		<tr>
+			<td>EmailAddress:<input id="EmailAddress" type="text"></td>
+			<td><div id="YourEmailAddress"></div></td>
+		</tr>
+		<tr>
+			<td>Income:<input id="Income" type="text"></td>
+			<td><div id="YourIncome"></div></td>
+		</tr>
+	</table>
+</body>
+</html>

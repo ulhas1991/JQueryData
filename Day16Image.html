@@ -1,0 +1,56 @@
+
+<html>
+<head>
+
+		<style>
+				.imgstyle{
+				height:100px;
+				width:100px;
+				border:1px solid grey;
+			}
+		</style>
+		
+	   <script src="jquery-3.1.1.js"></script>
+	   <script>
+		   $(document).ready(function(){
+			   $("#galleryImages img").on({
+				   mouseover:function(){
+					   $(this).css({
+					   'cursor':'pointer',
+					   	'border-Color':'blue'
+				    });
+				   },
+				   mouseout:function(){
+					   $(this).css({
+					   'cursor':'default',
+					   	'border-Color':'grey'
+				    });
+				   },
+				   click:function(){
+					  var mainImage1=$(this).attr('src');
+					  $("#mainImage").fadeOut(300,function(){
+						  $(this).attr('src',mainImage1);
+					  }).fadeIn(200);
+					  
+					  
+				   }
+				
+			   });
+		   });
+		</script>
+		
+<title>Insert title here</title>
+</head>
+<body>
+	<img id="mainImage" alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Hydrangeas.jpg"
+		height="500" width="520" style= "border:3px solid red">	
+<div id="galleryImages">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Hydrangeas.jpg" class="imgstyle">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Koala.jpg"class="imgstyle">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Lighthouse.jpg"class="imgstyle">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Jellyfish.jpg"class="imgstyle">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Penguins.jpg"class="imgstyle">
+</div>
+
+</body>
+</html>

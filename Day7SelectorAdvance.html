@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script>
+          $(document).ready(function(){
+              $("#computer").click(function(){
+                  getData("computer");
+              });
+              $("#countires").click(function(){
+                  getData("countires");
+              });
+
+
+          var getData=function(data){
+                    var result=$("input[name='"+data+"']:checked");
+                    var printData="";
+                    $(result).each(function(){
+                        printData+=$(this).val()+"<br>";
+                    });
+                    $("#display"+data).html(printData);
+              }
+             });
+        </script>
+    </head>
+
+
+    <body>
+        <input type="checkbox" name="computer" value="jQuery">jQuery
+        <input type="checkbox" name="computer" value="HTML">HTML
+        <input type="checkbox" name="computer" value="CSS">CSS
+        <input type="checkbox" name="computer" value="AngularJs">AngularJs
+        <br/><br/><br/>
+        <input type="checkbox" name="countires" value="India">India
+        <input type="checkbox" name="countires" value="US">US
+        <input type="checkbox" name="countires" value="Canada">Canada
+        <input type="checkbox" name="countires" value="Australia">Australia
+        <br/><br/><br/>
+        <button id="computer">CompterData</button>
+          <button id="countires">Countries</button>
+        <div id=displaycomputer>
+        </div>
+        <div id=displaycountires>
+        </div>
+
+    </body>
+
+
+</html>

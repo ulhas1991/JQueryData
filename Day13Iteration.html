@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            window.jquery || document.write("<script src='jquery-3.1.1.js'><\/script>");
+        </script>
+        <script>
+            $(document).ready(function(){
+                var result='';
+                $('li').each(function(index,element){
+                    result+=index+"-"+ $(element).text()+"<br><br>";
+                });
+                $("#result1").html(result);
+                 var javaData=[100,200,300,400,500];
+            var result1='';    
+            $.each(javaData, function(index1,element1){
+                result1+=index1 +"-"+ element1+ "<br>";
+            });
+             $("#result").html(result1);
+            });
+        </script>
+    </head>
+
+    <body>
+        <ul>
+            <li>India</li>
+            <li>USA</li>
+            <li>Australia</li>
+            <li>UK</li>
+        </ul>
+        <div id="result">
+        </div>
+        <div id="result1">
+        </div>
+    </body>
+</html>

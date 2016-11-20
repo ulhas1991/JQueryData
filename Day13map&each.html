@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>
+            window.jquery || document.write("<script src='jquery-3.1.1.js'><\/script>");
+        </script>
+        <script type="text/javascript">
+       
+        $(document).ready(function(){
+       /*Using each method
+            var result='';
+            $('li').each(function(){
+                result+=$(this).text()+"|";
+            });
+            result=result.substr(0,result.length-1);
+            $('#result').html(result);*/
+        //Using Map method
+             var a=$('li').map(function(){
+                 return $(this).text();
+            }).get().join('|');
+          $('#result').html(a);
+        });
+        </script>
+    </head>
+  <body>
+        <ul>
+            <li>India</li>
+            <li>USA</li>
+            <li>Australia</li>
+            <li>UK</li>
+        </ul>
+        <div id="result">
+        </div>
+        <div id="result1">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Table Header</title>
+
+<script src="jquery-3.1.1.js"></script>
+
+<script>
+    $(document).ready(function(){
+     /*To print Entire Table in HTML
+        alert($('table tr').html());*/
+    
+    /* To print every row in table
+    $('table tr').each(function(){
+        alert($(this).html());
+        });
+   */
+
+    /*To color even and odd table rows*/
+    $('tr:even').css('background-color' , 'blue');
+    $('tr:odd').css('background-color' , 'gray');
+ });
+
+</script>
+
+</head>
+<body>
+<table border="1">
+<tr>
+<th>Name</th>
+<th>Salary</th>
+</tr>
+<tr>
+<td>Ramesh Raman</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>Shabbir Hussein</td>
+<td>7000</td>
+</tr>
+
+<tr>
+<td>A1</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>7000</td>
+</tr>
+
+<tr>
+<td>B1</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>B2</td>
+<td>7000</td>
+</tr>
+
+<tr>
+<td>C1</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>7000</td>
+</tr>
+
+<tr>
+<td>D1</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>7000</td>
+</tr>
+
+
+
+<tr>
+<td>E1</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>E2</td>
+<td>7000</td>
+</tr>
+
+<tr>
+<td>F1</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>7000</td>
+</tr>
+
+<tr>
+<td>G1</td>
+<td>5000</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>7000</td>
+</tr>
+</table>
+</body>

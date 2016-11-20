@@ -1,0 +1,44 @@
+<html>
+    <head>
+        
+          <script src='jquery-3.1.1.js'></script>
+        <script>
+            $(document).ready(function(){
+                var result="";
+                
+                $('.inputData').change(function(){
+                    if(result==''){
+                        result=$(this).val();
+                    }
+                    else{
+                        result+=$(this).val();
+                    }
+                    $('#display').html(result+", ");
+                }); 
+                
+            });
+        </script>
+    </head>
+
+    <body>
+        FirstName:<input type="text" id="firstName" class="inputData"><br/><br/>
+        LastName:<input type="text" id="lastName" class="inputData"><br/><br/>
+        <input type="radio" value="Red" class="inputData">Red
+        <input type="radio" value="Blue" class="inputData">Blue
+        <input type="radio" value="Green" class="inputData">Green
+        <input type="radio" value="Yellow" class="inputData">Yellow<br>
+        <input type="checkbox" value="Pune" class="inputData">Pune
+        <input type="checkbox" value="Mumbai" class="inputData">Mumbai
+        <input type="checkbox" value="Nashik" class="inputData">Nashik
+        <input type="checkbox" value="Satara" class="inputData">Satara<br>
+        <select id="selectData" class="inputData">
+            <option value="Java">Java</option>
+            <option value="HTML">HTML</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="AngularJS">AngularJS</option>
+        </select>
+        <br><br>
+        <input type="button" id="btn1" value="SubmitData">
+        <div id="display"></div>
+    </body>
+</html>

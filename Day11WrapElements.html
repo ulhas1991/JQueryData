@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <style>
+        .divContainer{
+                background-color:red;
+            }
+        </style>
+        <script type="text/javascript">
+        
+        $(document).ready(function(){
+            $('div').wrap("<div class='divContainer'></div>");
+            $('div').unwrap();
+        });
+        </script>
+    </head>
+
+    <body>
+        <div id="Div1">
+            Div1
+        </div>
+
+        <div id="Div2">
+            Div2
+        </div>
+        
+        <div id="Div3">
+            Div3
+        </div>
+
+    </body>
+
+</html>

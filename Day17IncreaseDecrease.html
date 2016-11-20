@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+	.divData {
+		width: 500px;
+		height: 500px;
+		background-color: gray;	
+		font-size: 16px;
+	}
+</style>
+<script src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+			$("#increase").click(function(){
+					sizeData("increament");
+			});
+			$("#decrease").click(function(){
+				sizeData("decreament")});
+			$("#default").click(function(){
+				sizeData()});
+
+		function sizeData(data){
+			var fontSize=parseInt($("#divData").css('font-size'));
+			if(data=='increament'){
+				fontSize+=3;
+				}
+			else if(data=='decreament'){
+				fontSize-=3;
+			}
+			else{
+				fontSize=16;
+				}
+			$("#divData").css('font-size',fontSize);	
+		}
+	});
+	
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+Font-Size:
+<a href=# id="increase">increase</a>
+<a href="#" id="decrease">decrease</a>
+<a href="#" id="default">Default</a>
+	<div class=divData id="divData">
+		<ul class="dataFromat">
+			<li><h1>jQuery</h1></li>
+			<li>sadsasda</li>
+			<li>sdfd</li>
+			<li>sdfsdfdfdf</li>
+			<li>msdjkdfdd</li>
+		</ul>
+	</div>
+</body>
+</html>

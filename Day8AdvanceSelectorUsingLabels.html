@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("input[name='computer']").click(function(){
+                    getData("computer");
+                });
+
+                var getData=function(data){
+                    var dataFinal="";
+                    var result=$("input[name='"+data+"']:checked");
+                    result.each(function(){
+
+                        var selval=$(this).val();
+                        
+                        dataFinal+=selval+"-"+$("label[for='cb-"+selval+"']").text()+"<br>";
+                    });
+                    $("#display"+data).html(dataFinal);
+                }
+            });
+        
+        </script>
+
+    </head>
+    
+    
+    <body>
+        <input type="checkbox" name="computer" value="js">
+        <label for="cb-js">jQuery</label>
+        <input type="checkbox" name="computer" value="ht">
+        <label for="cb-ht">HTML</label>
+        <input type="checkbox" name="computer" value="cs">
+        <label for="cb-cs">CSS</label>
+        <input type="checkbox" name="computer" value="aj">
+        <label for="cb-aj">AngularJs</label>
+        <br/><br/><br/>
+        <input type="checkbox" name="countires" value="in">
+        <label for="cb-in">India</label>
+        <input type="checkbox" name="countires" value="US">
+        <label for="cb-US">USA</label>
+        <input type="checkbox" name="countires" value="can">
+        <label for="cb-can">Canada</label>
+        <input type="checkbox" name="countires" value="Aus">
+        <label for="cb-aus">Australia</label>
+        <br/><br/><br/>
+        <button id="computer">CompterData</button>
+          <button id="countires">Countries</button>
+        <div id=displaycomputer>
+        </div>
+        <div id=displaycountires>
+        </div>
+
+    </body>
+
+
+</html>

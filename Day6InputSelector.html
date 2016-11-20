@@ -1,0 +1,27 @@
+<html>
+    
+<head>
+    <script src="jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+    
+    
+    $(document).ready(function(){
+        $("#button1").click(function(){
+            $("input").each(function(){
+                alert($(this).val());
+            })
+        });
+    });
+     </script>
+     
+</head>
+
+<body>
+    Username:<input type="text" value="ushel2"><br><br>
+    FirstName:<input type="text"value="Ulhas"><br><br>
+    Surname:<input type="text" value="Shelke"><br><br>
+    Address:<textarea>ahahahahahh</textarea><br><br><br><br>
+    <button id="button1">Submit</button>
+
+</body>
+</html>

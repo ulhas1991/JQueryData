@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src="jquery-3.1.1.js"></script>
+<script >
+$(document).ready(function() {
+	$("#imageContainer img").on({
+		mouseover: function(){
+			$(this).css({
+				'cursor': "pointer",
+				'border-Color':'blue'
+			});
+		},
+		mouseout: function(){
+			$(this).css({
+				'cursor': "default",
+				'border-Color': "grey"
+			});
+		},
+		click: function(){
+			var data=$(this).attr("src");
+			$("#mainImage").attr("src", data);
+		}
+	});
+});
+
+
+</script>
+
+<style type="text/css">
+	.imageClass{
+		height: 100px;
+		width: 100px;
+		border-color: grey;
+		
+	}
+	
+</style>
+</head>
+<body>
+<img alt="Nothig To Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Hydrangeas.jpg" width="520" height="500" 
+	style="border:2px solid gray;" id="mainImage">
+<div id="imageContainer">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Jellyfish.jpg" class="imageClass">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Koala.jpg" class="imageClass">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Lighthouse.jpg" class="imageClass">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Tulips.jpg" class="imageClass">
+	<img alt="Nothing to Display" src="C:\Users\Ulhas\workspace\jQureyDemo\Images\Penguins.jpg" class="imageClass">
+</div>
+
+
+
+</body>
+</html>

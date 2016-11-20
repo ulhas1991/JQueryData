@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#selectCities").change(function(){
+                    var multipleData="";
+                    var result=$("#selectCities option:selected");
+                    if(result.length>1){
+                        result.each(function(){
+                            multipleData+=$(this).val()+"-"+$(this).text()+"<br>";
+                        });
+                         $("#displaycomputer").html(multipleData);
+                    }
+                    else{
+                        $("#displaycomputer").html(result.val()+" -"+ result.text());
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+         <select id="selectCities" multiple="multiple">
+             <option value="ind">INDIA</option>
+              <option value="us">USA</option>
+              <option value="aus">Australia</option>
+              <option value="sri">Srilanka</option>
+              <option value="ban">Bangladesh</option>  
+         </select>               
+         <div id=displaycomputer>
+        </div>
+    </body>
+</html>
