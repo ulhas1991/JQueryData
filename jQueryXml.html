@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script>
+            $(document).ready(function(){
+                $.ajax({
+                    type:"GET",
+                    url:"http://localhost:8080/JerseyUlhas/webapi/message",
+                    datatype:"xml",
+                    success:function(xmlData){
+                        data="";
+                        $(xmlData).find('messages').each(function(){
+                            
+                           data+="ID is "+$(this).find('id').text()+"  Name is "+ $(this).find('name').text()+ "<br>";
+                        });
+                        $("#displayData").html(data);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="displayData"></div>
+    </body>
+</html>

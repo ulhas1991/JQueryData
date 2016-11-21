@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script>
+            $(document).ready(function(){
+               // Use This if your File is Situated Outside 
+                $.ajax({
+                    Type:"GET",
+                    url:"http://localhost:8080/JerseyUlhas/webapi/message",
+                    dataType: "xml",
+                    success: function(xml) {
+						 $(xml).find('messages').each(function(){
+							 alert("ID is "+$(this).find('id').text());
+							 alert("Name is "+$(this).find('name').text());
+							 alert('Address is ' +$(this).find('address').text());
+						 });
+					 }
+
+                })
+
+                /*Alternate Way If you already have the file and not fetching from server
+
+                var xml = "<rss version='2.0'><channel><title>RSS Title</title></channel></rss>",
+                xmlDoc = $.parseXML( xml ),
+                $xml = $( xmlDoc ),
+                $title = $xml.find( "title" );
+                alert(($title).text());*/
+            });
+        </script>
+    </head>
+    <body>
+        Assuming the server is running :
+        Request to server returns the following XML.
+        <br>
+        which can be done by replacing < with ampersantlt &nbsp and > with &nbsp ampersantgt 
+        <pre>
+        <code><br>
+    &ltmessagess&gt
+     &ltmessages&gt
+         &ltaddress&gtpune &lt/address&gt
+         &ltid&gt1 &lt/id&gt
+         &ltname>234&lt/name&gt
+     &lt/messages&gt
+     &ltmessages&gt
+         &ltaddress&gtPu1ne&lt/address&gt
+         &ltid>2&lt/id&gt
+         &ltname>ulhass&lt/name&gt
+     &lt/messages&gt
+     &ltmessages&gt
+         &ltaddress&gtPu2ne&lt/address&gt
+         &ltid>3&lt/id&gt
+         &ltname>ulhasdf&lt/name&gt
+     &lt/messages&gt
+ &lt/messagess&gt </code></pre>
+    </body>
+</html>

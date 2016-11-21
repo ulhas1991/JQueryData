@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="jquery-3.1.1.js"></script>
+        <script>
+        $(document).ready(function(){
+          /*  $.ajax({
+                type:"GET",
+                url:"http://localhost:8080/JerseyMessaging/webapi/messagesJson",
+                datatype:"json",
+                success:function(jsondata){
+                    alert(jsondata);
+                }
+            });
+			
+			ANOTHER WAY
+			$.ajax({
+					//Force to Handle it as Text
+					url: "http://localhost:8080/JerseyMessaging/webapi/messagesJson",
+					dataType: "text",
+					success: function(data) {
+
+						//data downloaded so we call parseJSON function 
+						//and pass downloaded data
+						var json = $.parseJSON(data);
+						//now json variable contains data in json format
+						//let's display a few items
+						for (var i=0;i<json.length;++i)
+						{
+							alert(json[i].author);
+						}
+					}
+				});
+				Another Way
+				$.ajax({ 
+                type: 'GET', 
+                url: "http://localhost:8080/JerseyMessaging/webapi/messagesJson", 
+                data: { get_param: 'author' }, 
+                dataType:'json',
+                success: function (data) { 
+                       $(data).each(function(i){
+							alert(data[i].author);
+					   });
+                    
+                }
+            });*/
+			$('#get-data').click(function () {
+			  $.getJSON('example.json', function (data) {
+				console.log(data);
+			  });
+			});
+				
+        });
+        </script>
+    </head>
+    <body>
+        <div id="displayData"></div> 
+    </body>
+</html>
