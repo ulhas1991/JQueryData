@@ -42,12 +42,13 @@
 					   });
                     
                 }
-            });*/
-			$('#get-data').click(function () {
-			  $.getJSON('example.json', function (data) {
-				console.log(data);
-			  });
-			});
+            });
+			Another Way
+			  $.getJSON("http://localhost:8080/JerseyMessaging/webapi/messagesJson", function (data) {
+				$(data).each(function(i){
+					alert(data[i].author);
+				});
+			  });*/
 				
         });
         </script>
