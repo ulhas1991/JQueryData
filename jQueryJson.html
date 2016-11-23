@@ -48,8 +48,31 @@
 				$(data).each(function(i){
 					alert(data[i].author);
 				});
-			  });*/
-				
+			  });
+				POST METHOD
+
+				   $.ajax({
+                            headers: { 
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json' 
+                             },
+                            type: "POST",
+                            //the url where you want to sent the userName and password to
+                            url: 'http://localhost:8080/JerseyMessaging/webapi/messagesJson',
+                            dataType: 'json',
+                            
+                            //json object to sent to the authentication url
+                            data:  JSON.stringify({
+                                    "author": "ulhasid7",
+                                    "date": "2016-11-20T21:08:39.671-05:00"
+                                    }),
+                            success: function () {
+
+                            alert("Thanks!"); 
+                            }
+                        });*/
+
+
         });
         </script>
     </head>
